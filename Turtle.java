@@ -354,7 +354,9 @@ public class Turtle {
     
     this.x = xNew;
     this.y = yNew;
-    
+    try {
+      Thread.sleep(30);
+    } catch (InterruptedException ei) {}
     updateWorld();
   }
   
@@ -550,23 +552,71 @@ public class Turtle {
     int k;
     int l;
       
-    if (x<1/2*w){
-      k=(int)(f);}
-    else{
-      k=(int)(g);}
-    if (y<1/2*h){
-      l=(int)(i);}
-    else{
-      l=(int)(j);}
-
+    if (x<1/2*w) {
+      k=(int)(f);
+    } else {
+      k=(int)(g);
+    }
     
+    if (y<1/2*h) {
+      l=(int)(i);
+    } else {
+      l=(int)(j);
+    }
     
-    if (k<l){
-      return k;}
-    else{
-      return l;}
-      
-      
+    if (k<l) {
+      return k;
+    } else {
+      return l;
+    }      
   }    
+
+  public void bounceWalls (int d) {
+    int l=this.distClosestWall();
+    int h= this.getWorld().getHeight();
+    int w= this.getWorld().getWidth();
+    if (d>l) {
+      this.moveTo(w/2,h/2);
+    }
+}
+  
+ public void drawCircle(int radius) {
+   int a = this.getXPos();
+   int b = this.getYPos();
+   int x = this.getXPos();
+   int y = this.getYPos();
+   
+
+   this.disablePath();
+   this.moveTo(x,(int)(Math.abs(Math.sqrt(Math.pow(radius,2)-(Math.pow(x-a+a-a,2)))-(b))));
+   this.enablePath();
+   
+   int f = this.distClosestWall();
+   while (x-a<radius && f>10) {
+     x++;
+     y = (int)(Math.abs(Math.sqrt(Math.pow(radius,2)-(Math.pow(x-a+a-a,2)))-(b)));
+     this.moveTo(x,y);
+     f = this.distClosestWall();
+   }
+   while (x>a && f>10) {
+     x--;
+     y = (int)(Math.abs(Math.sqrt(Math.pow(radius,2)-(Math.pow(x-a+a-a,2)))-(-b)));
+     this.moveTo(x,y);
+     f = this.distClosestWall();
+   }
+   while (x>a-radius && f>10) {
+     x--;
+     y = (int)(Math.abs(Math.sqrt(Math.pow(radius,2)-(Math.pow(x-a+a-a,2)))-(-b)));
+     this.moveTo(x,y);
+     f = this.distClosestWall();
+   }
+   while (x<=a && f>10) {
+     x++;
+     y = (int)(Math.abs(Math.sqrt(Math.pow(radius,2)-(Math.pow(x-a+a-a,2)))-(b)));
+     this.moveTo(x,y);
+     f = this.distClosestWall();
+   }
+ }
+ 
 
 }
