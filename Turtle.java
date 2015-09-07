@@ -618,5 +618,24 @@ public class Turtle {
    }
  }
  
+ public void moveRandom() {
+ 
+   this.turn((int)((Math.random()+1)*180));
+   this.move((int)((Math.random()+1*50)));
+ }
 
+ public double distance(Turtle t) {
+   int x = t.getXPos();
+   int y = t.getYPos();
+   double d = this.distanceTo(x,y);
+   return d;
+ }
+ 
+ public double krock(Turtle t, Turtle x) {
+   double d = t.distance(x);
+   if (d<20){
+      System.out.println("Krock");
+   }
+   return d;
+ }
 }
