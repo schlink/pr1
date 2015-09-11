@@ -620,7 +620,7 @@ public class Turtle {
  
  public void moveRandom() {
  
-   this.turn((int)((Math.random()+1)*180));
+   this.turn((int)((Math.random()+1)*360));
    this.move((int)((Math.random()+1*50)));
  }
 
