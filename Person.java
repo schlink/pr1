@@ -1,9 +1,8 @@
 public class Person {
   
-  public String name;
-  public int age;
-  public int days;
-  public String address;
+  private String name;
+  private int age;
+  private String address;
   
   public Person() {
     name = "NoName";
@@ -33,7 +32,7 @@ public class Person {
   }
   
   public int days() {
-    days = age*365;
+    int days = age*365;
     return days;
   }
   

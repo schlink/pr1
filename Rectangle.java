@@ -23,7 +23,9 @@
         this.width = width; 
      }
 
-    
+      public void setHeight(double h) {
+        height = h; 
+     }    
 
      public double area() { 
         double a;
@@ -31,19 +33,17 @@
         return a;     //OBS! Metoden returnerar ett tal
      }
 
-      public void setHeight(double h) {
-        height = h; 
-     }
+
      
      public double circumference() {
-       double omkrets = 2*width+2*height;
+       double omkrets = 2*this.width+2*this.height;
        return omkrets;
      }
      
-     public String toString() {
-        String s = "The rectangle is " + width + " by " + height + " area units.";  
-        return s;
-     }
+//     public String toString() {
+//        String s = "The rectangle is " + width + " by " + height + " area units.";  
+//        return s;
+//     }
 
      public static void main(String [] arg) {
         Rectangle rec1 = new Rectangle();

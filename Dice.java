@@ -39,14 +39,14 @@ public class Dice {
          System.out.println();
        }
      }
-     d.roll(6);
+     int x = d.roll(6);
+     System.out.println(x);
    }
   
-   int n;
-   int i = 0;
-   int s = 0;
    
    public int roll(int n )  {
+   int i = 0;
+   int s = 0;     
      while (i<n) {
        i++;
        this.roll();
