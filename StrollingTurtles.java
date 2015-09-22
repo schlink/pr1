@@ -23,7 +23,7 @@ public class StrollingTurtles {
               System.out.println("Krock");
               a++;
            }
-           Thread.sleep(200);  // Makes the program sleep for 0.2 sec.
+//           Thread.sleep(200);  // Makes the program sleep for 0.2 sec.
          } // Slut på while-satsen
         
         // Code that prints the number of steps and collisions      

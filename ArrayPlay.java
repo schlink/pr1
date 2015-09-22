@@ -129,6 +129,15 @@ public int maxIndex() {
     }
     return maxIndex;
   } 
+
+public boolean exists(int value) {
+  for (int currentValue : theArray) {
+    if (currentValue == value) {
+      return true;
+    } 
+  }
+  return false;
+}
     
   
   

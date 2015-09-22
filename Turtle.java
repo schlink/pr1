@@ -354,9 +354,9 @@ public class Turtle {
     
     this.x = xNew;
     this.y = yNew;
-    try {
+     try {
       Thread.sleep(30);
-    } catch (InterruptedException ei) {}
+     } catch (InterruptedException ei) {}
     updateWorld();
   }
   
